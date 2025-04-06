@@ -18,28 +18,28 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test -- --watchAll=false'
+                bat 'npm test -- --watchAll=false'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Deploy (Fake)') {
             steps {
                 echo 'Simulating deployment...'
-                sh 'mkdir -p /tmp/react-deploy'
-                sh 'cp -r build/* /tmp/react-deploy/'
-                echo 'Build deployed to /tmp/react-deploy (fake prod)'
+                bat 'mkdir C:\\temp\\react-deploy'
+                bat 'xcopy /E /I /Y build\\* C:\\temp\\react-deploy\\'
+                echo 'Build deployed to C:\\temp\\react-deploy (fake prod)'
             }
         }
     }
