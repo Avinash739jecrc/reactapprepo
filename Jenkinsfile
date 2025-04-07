@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage('Deploy (Fake)') {
+        stage('Deploy') {
             steps {
                 echo 'Simulating deployment...'
                 bat 'mkdir C:\\temp\\react-deploy'
